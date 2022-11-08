@@ -36,6 +36,10 @@
             this.lblReturn2 = new System.Windows.Forms.Label();
             this.txtSkolaIme = new System.Windows.Forms.TextBox();
             this.txtBrojUcenika = new System.Windows.Forms.TextBox();
+            this.txtLimit = new System.Windows.Forms.TextBox();
+            this.lblLimit = new System.Windows.Forms.Label();
+            this.btnLimitInput = new System.Windows.Forms.Button();
+            this.lblLimitReturnSort = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Show
@@ -113,11 +117,50 @@
             this.txtBrojUcenika.Size = new System.Drawing.Size(100, 21);
             this.txtBrojUcenika.TabIndex = 7;
             // 
+            // txtLimit
+            // 
+            this.txtLimit.Location = new System.Drawing.Point(783, 43);
+            this.txtLimit.Name = "txtLimit";
+            this.txtLimit.Size = new System.Drawing.Size(100, 20);
+            this.txtLimit.TabIndex = 8;
+            // 
+            // lblLimit
+            // 
+            this.lblLimit.AutoSize = true;
+            this.lblLimit.Location = new System.Drawing.Point(780, 24);
+            this.lblLimit.Name = "lblLimit";
+            this.lblLimit.Size = new System.Drawing.Size(130, 13);
+            this.lblLimit.TabIndex = 9;
+            this.lblLimit.Text = "Granica upisanih učenika:";
+            // 
+            // btnLimitInput
+            // 
+            this.btnLimitInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnLimitInput.Location = new System.Drawing.Point(925, 22);
+            this.btnLimitInput.Name = "btnLimitInput";
+            this.btnLimitInput.Size = new System.Drawing.Size(45, 41);
+            this.btnLimitInput.TabIndex = 10;
+            this.btnLimitInput.Text = "OK";
+            this.btnLimitInput.UseVisualStyleBackColor = true;
+            this.btnLimitInput.Click += new System.EventHandler(this.btnLimitInput_Click);
+            // 
+            // lblLimitReturnSort
+            // 
+            this.lblLimitReturnSort.AutoSize = true;
+            this.lblLimitReturnSort.Location = new System.Drawing.Point(783, 93);
+            this.lblLimitReturnSort.Name = "lblLimitReturnSort";
+            this.lblLimitReturnSort.Size = new System.Drawing.Size(0, 13);
+            this.lblLimitReturnSort.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(991, 450);
+            this.Controls.Add(this.lblLimitReturnSort);
+            this.Controls.Add(this.btnLimitInput);
+            this.Controls.Add(this.lblLimit);
+            this.Controls.Add(this.txtLimit);
             this.Controls.Add(this.txtBrojUcenika);
             this.Controls.Add(this.txtSkolaIme);
             this.Controls.Add(this.lblReturn2);
@@ -143,6 +186,10 @@
         private System.Windows.Forms.Label lblReturn2;
         private System.Windows.Forms.TextBox txtSkolaIme;
         private System.Windows.Forms.TextBox txtBrojUcenika;
+        private System.Windows.Forms.TextBox txtLimit;
+        private System.Windows.Forms.Label lblLimit;
+        private System.Windows.Forms.Button btnLimitInput;
+        private System.Windows.Forms.Label lblLimitReturnSort;
     }
 }
 

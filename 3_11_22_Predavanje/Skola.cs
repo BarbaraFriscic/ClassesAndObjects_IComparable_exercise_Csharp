@@ -11,7 +11,9 @@ namespace _3_11_22_Predavanje
         public string imeSkole;
         public int brojUcenika;
 
-         int IComparable.CompareTo(object obj)
+        
+
+        int IComparable.CompareTo(object obj)
         {
             Skola temp = (Skola)obj;
             if (this.brojUcenika > temp.brojUcenika)
@@ -21,6 +23,7 @@ namespace _3_11_22_Predavanje
             else
                 return 0;
         }
+
 
         public string ImeSkole
         {
@@ -38,6 +41,8 @@ namespace _3_11_22_Predavanje
             this.imeSkole = imesk;
             this.brojUcenika = brUc;
         }
+        
 
-    }
+
+}
 }

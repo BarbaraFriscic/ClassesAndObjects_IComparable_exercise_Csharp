@@ -16,6 +16,9 @@ namespace _3_11_22_Predavanje
         {
             InitializeComponent();
             lblReturn2.Text = String.Format("Unesite podatke za {0}. školu", counter + 1);
+            lblLimit.Hide();
+            txtLimit.Hide();
+            btnLimitInput.Hide();
 
 
         }
@@ -59,7 +62,7 @@ namespace _3_11_22_Predavanje
         private void btnInput_Click(object sender, EventArgs e)
         {
 
-            lblReturn2.Text = String.Format("Unesite podatke za {0}. školu", counter + 2);
+            
 
 
             if (txtSkolaIme.Text == "")
@@ -75,6 +78,7 @@ namespace _3_11_22_Predavanje
             
             else
             {
+                lblReturn2.Text = String.Format("Unesite podatke za {0}. školu", counter + 2);
                 skole[counter] = new Skola(txtSkolaIme.Text, Convert.ToInt32(txtBrojUcenika.Text));
                 txtSkolaIme.Clear();
                 txtSkolaIme.Focus();
@@ -83,7 +87,7 @@ namespace _3_11_22_Predavanje
                 counter++;
                 if (counter == skole.Length)
                 {
-                    //lblReturn2.Text = String.Empty;
+                    lblReturn2.Text = String.Empty;
                     txtSkolaIme.Enabled = false;
                     txtBrojUcenika.Enabled = false;
                     Array.Sort(skole);
@@ -94,10 +98,24 @@ namespace _3_11_22_Predavanje
                         
                         lblReturn2.Text += String.Format("\nIme škole: {0}, broj učenika: {1}", skola.ImeSkole, skola.BrojUcenika);
                     }
+
+                    lblLimit.Show();
+                    txtLimit.Show();
+                    btnLimitInput.Show();
                 }
             }
             
         }
-        
+
+        private void btnLimitInput_Click(object sender, EventArgs e)
+        {
+            int granica = Convert.ToInt32(txtLimit.Text);
+
+            foreach (Skola skola in skole)
+            {
+                if (skola.BrojUcenika > granica)
+                lblLimitReturnSort.Text += String.Format("\nIme škole: {0}, broj učenika: {1}", skola.ImeSkole, skola.BrojUcenika);
+            }
+        }
     }
 }
